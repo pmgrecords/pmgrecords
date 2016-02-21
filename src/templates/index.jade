@@ -1,9 +1,14 @@
 doctype html
-html(ng-app)
+html(ng-app='pmgRecords')
     head
         link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
         link(rel='stylesheet', href='bower_components/quantumui/dist/css/quantumui.min.css')
+        link(rel='stylesheet', href='bower_components/quantumui/dist/css/addon/effect-light.min.css')
         script(type='text/javascript', src='bower_components/angular/angular.min.js')
+        script(type='text/javascript', src='bower_components/angular-sanitize/angular-sanitize.min.js')
+        script(type='text/javascript', src='bower_components/angular-animate/angular-animate.min.js')
+        script(type='text/javascript', src='bower_components/moment/moment.js')
+        script(type='text/javascript', src='src/js/module.js')
     body
         .well
             h1 {{ title }}
