@@ -21,6 +21,7 @@
   "dependencies": {
     "angular": "1.4.5",
     "bootstrap": "3.3.6",
-    "quantumui": "~1.0.0"
+    "quantumui": "~1.0.0",
+    "angular-bootstrap": "^1.1.2"
   }
 }
