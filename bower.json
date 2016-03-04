@@ -23,5 +23,20 @@
     "bootstrap": "3.3.6",
     "quantumui": "~1.0.0",
     "angular-bootstrap": "^1.1.2"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/fonts/glyphicons-halflings-regular.woff",
+        "dist/fonts/glyphicons-halflings-regular.woff2",
+        "dist/fonts/glyphicons-halflings-regular.ttf"
+      ]
+    },
+    "angular": {
+      "main": [
+        "angular.js"
+      ]
+    }
   }
 }
