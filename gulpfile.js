@@ -9,7 +9,8 @@ var gulp            = require('gulp'),
     uglify          = require('gulp-uglify'),
     rename          = require('gulp-rename'),
     filter          = require('gulp-filter'),
-    csso            = require('gulp-csso');
+    csso            = require('gulp-csso'),
+    htmlReplace     = require('gulp-html-replace');
 
 gulp.task('server', function() {
     connect.server({
@@ -19,12 +20,19 @@ gulp.task('server', function() {
     });
 });
 
+gulp.task('php', function() {
+    return gulp.src(config.paths.src.php)
+        .pipe(gulp.dest(config.paths.dist.html))
+        .pipe(liveReload());
+});
+
 gulp.task('jade', function() {
     return gulp.src(config.paths.src.jade)
         .pipe(jade({ pretty: true }))
         .pipe(gulp.dest(config.paths.dist.html))
         .pipe(liveReload());
 });
+
 
 gulp.task('sass', function () {
     return gulp.src(config.paths.src.sass)
@@ -39,19 +47,9 @@ gulp.task('js', function () {
         .pipe(liveReload());
 });
 
-gulp.task('assets', function() {
-    return gulp.src(config.paths.src.assets)
-        .pipe(gulp.dest(config.paths.dist.assets));
-});
-
-gulp.task('partials', function() {
-    return gulp.src(config.paths.src.partials)
-        .pipe(gulp.dest(config.paths.dist.partials));
-});
-
-gulp.task('index', function() {
-    return gulp.src(config.paths.src.index)
-        .pipe(gulp.dest(config.paths.dist.index));
+gulp.task('images', function() {
+    return gulp.src(config.paths.src.images)
+        .pipe(gulp.dest(config.paths.dist.images));
 });
 
 gulp.task('fonts', function() {
@@ -81,14 +79,20 @@ gulp.task('watch', function () {
     gulp.watch(config.paths.src.sass, ['sass']);
     gulp.watch(config.paths.src.js, ['js']);
     gulp.watch(config.paths.src.jade, ['jade']);
-    gulp.watch(config.paths.src.index, ['index']);
-    gulp.watch(config.paths.src.partials, ['partials']);
 });
 
-gulp.task('gh-pages', ['build'], function () {
+gulp.task('gh-pages', ['build', 'gh-pages-base'], function () {
     return gulp.src(config.paths.dist.all).pipe(ghPages());
 });
 
-gulp.task('build', ['jade', 'sass', 'js', 'partials', 'index', 'assets', 'fonts', 'bower']);
+gulp.task('gh-pages-base', ['jade'], function() {
+    return gulp.src(config.paths.dist.index)
+        .pipe(htmlReplace({ base: '<base href="/">' }))
+        .pipe(gulp.dest(config.paths.dist.html));
+
+});
+
+
+gulp.task('build', ['jade', 'sass', 'js', 'images', 'fonts', 'bower']);
 gulp.task('serve', ['build', 'server', 'watch']);
 gulp.task('default', ['serve']);

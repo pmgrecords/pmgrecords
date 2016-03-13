@@ -1,16 +1,16 @@
 {
-  "name": "pmg-records-client",
+  "name": "pmg-records",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "authors": [
-    "Jonathan R. <jreyes.satx@gmail.com>"
+    "Jonathan Reyes <jreyes.satx@gmail.com> (http://jonathanreyes.net)",
+    "Alex Pepper <alexander.pepper@gmail.com> (http://alexpepper.us)"
   ],
-  "license": "ISC",
-  "homepage": "https://github.com/pmg-records/pmg-records-client",
+  "license": "MIT",
+  "homepage": "",
   "moduleType": [
     "es6"
   ],
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -19,10 +19,11 @@
     "tests"
   ],
   "dependencies": {
+    "angular-route": "^1.5.0",
     "angular": "1.4.5",
     "bootstrap": "3.3.6",
-    "quantumui": "~1.0.0",
-    "angular-bootstrap": "^1.1.2"
+    "angular-bootstrap": "1.2.4",
+    "angular-animate": "^1.5.0"
   },
   "overrides": {
     "bootstrap": {

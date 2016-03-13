@@ -1,25 +1,23 @@
 {
   "paths": {
+    "src": {
+      "jade": "src/templates/**/*.jade",
+      "sass": "src/css/**/*.scss",
+      "images": "src/images/**",
+      "bower": "bower_components/",
+      "js": "src/js/**/*.js",
+      "fonts": "src/fonts/**/*",
+      "php": "src/php/**/*"
+    },
     "dist": {
       "all": "dist/**/*",
       "html": "dist/",
       "css": "dist/css/",
       "js": "dist/js/",
-      "assets": "dist/assets",
+      "images": "dist/images",
       "bower": "dist/bower_components/",
-      "partials": "dist/partials/",
-      "index": "dist/",
-      "fonts": "dist/fonts/"
-    },
-    "src": {
-      "jade": "src/templates/**/*.jade",
-      "sass": "src/css/**/*.scss",
-      "assets": "src/assets/**",
-      "bower": "bower_components/",
-      "js": "src/js/**/*.js",
-      "partials": "src/partials/**/*.html",
-      "index": "src/index.html",
-      "fonts": "src/fonts/**/*"
+      "fonts": "dist/fonts/",
+      "index": "dist/index.html"
     }
   }
 }
