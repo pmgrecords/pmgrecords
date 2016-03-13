@@ -6,6 +6,6 @@
     function SiteController($location) {
         var vm = this;
 
-        vm.mainMenu = ['Store', 'News', 'Events', 'Music', 'Videos', 'Graphics'];
+        vm.mainMenu = ['Store', 'News', 'Events', 'Music', 'Videos', 'Artwork', 'Contact'];
     }
 })();
