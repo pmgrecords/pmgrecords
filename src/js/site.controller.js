@@ -7,5 +7,10 @@
         var vm = this;
 
         vm.mainMenu = ['Store', 'News', 'Events', 'Music', 'Videos', 'Artwork', 'Contact'];
+        vm.isActive = isActive;
+
+        function isActive(viewLocation) {
+            return $location.path().startsWith(viewLocation);
+        }
     }
 })();
