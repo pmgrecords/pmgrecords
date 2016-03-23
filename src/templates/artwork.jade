@@ -1,2 +1,4 @@
-#artwork(ng-controller='ArtworkController as artwork')
-    div(ng-repeat='image in artwork.images') {{ image }}
+h1 this is artwork
+#artwork(ng-controller='ArtworkController as artwork' class="container")
+    .row
+        img(ng-repeat='image in artwork.images' src="/images/art/{{ image }}" class="img-responsive center-block thumbnail col-md-3")
