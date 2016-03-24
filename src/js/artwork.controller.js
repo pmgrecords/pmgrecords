@@ -6,7 +6,7 @@
 
         vm.images = [];
 
-        for(var i = 1; i <= 19; i++) {
+        for(var i = 1; i <= 24; i++) {
             vm.images.push({
                 url: 'images/art/' + i + '.JPG'
             });
