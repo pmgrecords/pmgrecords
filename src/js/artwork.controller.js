@@ -7,7 +7,7 @@
         vm.images = [];
 
         for(var i = 1; i <= 19; i++) {
-            vm.images.push(i + '.JPG');
+            vm.images.push('images/art/' + i + '.JPG');
         }
     }
 })();
