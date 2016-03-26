@@ -16,7 +16,10 @@
             { name: 'Contact', url: 'contact' }
         ];
         vm.isActive = isActive;
-        vm.showNavigation = true;
+
+        if ($location.path() != '/') {
+            vm.showNavigation = true;
+        }
 
         function isActive(viewLocation) {
             return $location.path().startsWith(viewLocation);
