@@ -9,7 +9,6 @@
         vm.mainMenu = [
             { name: 'Store', url: 'store' },
             { name: 'News', url: 'news' },
-            { name: 'Events', url: 'events' },
             { name: 'Music', url: 'music' },
             { name: 'Videos', url: 'videos' },
             { name: 'Artwork', url: 'artwork' },
