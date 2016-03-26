@@ -6,8 +6,17 @@
     function SiteController($location) {
         var vm = this;
 
-        vm.mainMenu = ['Store', 'News', 'Events', 'Music', 'Videos', 'Artwork', 'Contact'];
+        vm.mainMenu = [
+            { name: 'Store', url: 'store' },
+            { name: 'News', url: 'news' },
+            { name: 'Events', url: 'events' },
+            { name: 'Music', url: 'music' },
+            { name: 'Videos', url: 'videos' },
+            { name: 'Artwork', url: 'artwork' },
+            { name: 'Contact', url: 'contact' }
+        ];
         vm.isActive = isActive;
+        vm.showNavigation = true;
 
         function isActive(viewLocation) {
             return $location.path().startsWith(viewLocation);

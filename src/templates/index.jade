@@ -12,20 +12,21 @@ html(ng-app='PMG Records')
         script(type='text/javascript', src='js/module.js')
         script(type='text/javascript', src='js/config.js')
         script(type='text/javascript', src='js/site.controller.js')
+        script(type='text/javascript', src='js/landing.controller.js')
         script(type='text/javascript', src='js/artwork.controller.js')
 
     body(ng-app='PMG Records', ng-controller='SiteController as site')
-        nav.menu.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        nav.menu.navbar.navbar-inverse.navbar-fixed-top(role='navigation', ng-show='site.showNavigation')
             .navbar-header
                 button.navbar-toggle(type='button', ng-init='navCollapsed = true', ng-click='navCollapsed = !navCollapsed')
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand(href='/home', ng-class='{ active: isActive("home") }') PMG Records
+                a.navbar-brand(href='/home', ng-class='{ "active": site.isActive("/home") }') PMG Records
             .collapse.navbar-collapse(ng-class='{ in : !navCollapsed }', ng-click='navCollapsed=true')
                 ul.nav.navbar-nav
-                    li(ng-repeat='item in site.mainMenu', ng-class='{ active: isActive("{{ item }}")}')
-                        a(href='/{{ item }}') {{item}}
+                    li(ng-repeat='item in site.mainMenu', ng-class='{ "active": site.isActive("/{{ item.url }}")}')
+                        a(href='/{{ item.url }}') {{ item.name }}
         .container-fluid
             ng-view
 

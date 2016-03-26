@@ -1,4 +1,8 @@
 #artwork(ng-controller='ArtworkController as artwork' class="container")
-    h1 this is artwork
-        .row
-            .artwork-tile(ng-repeat='image in artwork.images', ng-style='{ "background-image": "url(\'{{ image.url }}\')" }')
+    h1 Artwork
+    .row
+        .col-xs-3(ng-repeat='image in artwork.images')
+            .artwork-tile
+                a(href='{{ image.url }}', target='_')
+                    img(ng-src='{{ image.url }}')
+            h4.text-center {{ image.id }}

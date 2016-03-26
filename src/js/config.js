@@ -6,10 +6,10 @@
 
     function configure($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/', { templateUrl: 'home.html' })
+            .when('/', { templateUrl: 'landing.html' })
             .when('/:page', {
                 templateUrl: function (params) {
-                    return params.page.toLowerCase() + '.html';
+                    return params.page + '.html';
                 }
             })
             .otherwise({templateUrl: 'home.html'});

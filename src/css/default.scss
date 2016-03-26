@@ -1,26 +1,31 @@
+$gold: #DEAD42;
+$gray: #B6BAB2;
+
 body {
-  background-color: #222;
+  background-color: black;
+  color: $gray;
   padding: 60px 30px 30px 30px;
 }
 
 .artwork-tile {
-  display: inline;
-  //overflow: hidden;
-  transition: all 0.33s;
-  background-position: top center;
-  width: 180px;
-  height: 180px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  text-align: center;
 
-  display: inline-block;
-  z-index: 0;
+  img {
+    height: 180px;
+  }
 }
 
-.artwork-tile:hover {
-  //overflow: visible;
-  //width: 100vh;
-  //height: 100vh;
-  transform: scale(2);
-  z-index: 100;
+
+.landing {
+  a {
+    text-decoration: none;
+    color: $gold;
+  }
+
+  img {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  text-align: center;
 }
