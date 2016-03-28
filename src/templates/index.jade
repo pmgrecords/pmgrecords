@@ -22,7 +22,8 @@ html(ng-app='PMG Records')
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand(href='/home', ng-class='{ "active": site.isActive("/home") }') PMG Records
+                a.navbar-brand(href='/home', ng-class='{ "active": site.isActive("/home") }')
+                    img(src='images/navbar-brand.jpg')
             .collapse.navbar-collapse(ng-class='{ in : !navCollapsed }', ng-click='navCollapsed=true')
                 ul.nav.navbar-nav
                     li(ng-repeat='item in site.mainMenu', ng-class='{ "active": site.isActive("/{{ item.url }}")}')

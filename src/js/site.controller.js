@@ -7,12 +7,12 @@
         var vm = this;
 
         vm.mainMenu = [
-            { name: 'Store', url: 'store' },
-            { name: 'News', url: 'news' },
-            { name: 'Music', url: 'music' },
-            { name: 'Videos', url: 'videos' },
-            { name: 'Artwork', url: 'artwork' },
-            { name: 'Contact', url: 'contact' }
+            { name: 'STORE', url: 'store' },
+            { name: 'NEWS', url: 'news' },
+            { name: 'MUSIC', url: 'music' },
+            { name: 'VIDEOS', url: 'videos' },
+            { name: 'ARTWORK', url: 'artwork' },
+            { name: 'CONTACT', url: 'contact' }
         ];
         vm.isActive = isActive;
 

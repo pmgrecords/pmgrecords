@@ -1,6 +1,10 @@
 $gold: #DEAD42;
 $gray: #B6BAB2;
 
+h1, h2, h3, h4 {
+  color: $gold;
+}
+
 body {
   background-color: black;
   color: $gray;
@@ -15,6 +19,9 @@ body {
   }
 }
 
+.navbar-brand img {
+  width: 172px;
+}
 
 .landing {
   a {
@@ -28,4 +35,23 @@ body {
   }
 
   text-align: center;
+}
+
+.contact {
+  p.contact-info {
+    color: gray;
+  }
+
+  p.contact-info strong {
+    color: black;
+  }
+
+  .contact-form-container {
+    border-left: 1px solid black;
+  }
+
+  input, textarea {
+    background-color: black;
+    color: $gray;
+  }
 }
