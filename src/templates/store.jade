@@ -1,1 +1,6 @@
-h1 this is store
+.store(ng-controller='StoreController as store')
+    .row
+        .col-sm-3.product-tile-container(ng-repeat='product in store.products')
+            .product-tile
+
+

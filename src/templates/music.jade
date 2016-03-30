@@ -1,1 +1,5 @@
-h1 this is music
+.music(ng-controller='MusicController as music')
+    .row(ng-repeat='artist in music.artists')
+        a(href='{{ artist.url }}')
+            .h3 {{ artist.name }}
+

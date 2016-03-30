@@ -1,7 +1,7 @@
 $gold: #DEAD42;
 $gray: #B6BAB2;
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, a {
   color: $gold;
 }
 
@@ -53,5 +53,23 @@ body {
   input, textarea {
     background-color: black;
     color: $gray;
+  }
+}
+
+.store {
+  .product-tile {
+    border: 1px solid $gold;
+    width: 120px;
+    height: 180px;
+    transition: all 1s;
+    background-color: black;
+  }
+
+  .product-tile:hover {
+    transform: scale(1.4);
+  }
+
+  .product-tile-container {
+    margin-bottom: 40px;
   }
 }
