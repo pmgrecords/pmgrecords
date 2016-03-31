@@ -2,4 +2,5 @@
     .row(ng-repeat='artist in music.artists')
         a(href='{{ artist.url }}')
             .h3 {{ artist.name }}
+        iframe(width="50%", height="300", scrolling="no", frameborder="no", ng-src='{{ music.soundCloudUrl(artist) | trusted }}')
 
