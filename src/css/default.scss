@@ -19,6 +19,41 @@ body {
   }
 }
 
+.events {
+
+  .event {
+    margin-bottom: 40px;
+  }
+
+  .event-flyer img {
+    width: 100%;
+  }
+
+  .event-flyer {
+    margin: 0 auto;
+    max-width: 540px;
+  }
+}
+
+.artist-tile {
+  width: 320px;
+  margin-bottom: 20px;
+
+  iframe {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+
+    iframe {
+      width: 80%;
+    }
+  }
+}
+
 .navbar-brand img {
   width: 172px;
 }

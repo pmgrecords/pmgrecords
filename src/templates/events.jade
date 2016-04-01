@@ -1,0 +1,4 @@
+.events(ng-controller='EventsController as events')
+    .event(ng-repeat='event in events.events')
+        .event-flyer
+            img(ng-src='{{ event.image }}')
