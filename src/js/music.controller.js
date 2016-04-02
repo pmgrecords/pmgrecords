@@ -1,9 +1,9 @@
 (function() {
     angular.module('PMG Records').controller('MusicController', MusicController);
 
-    MusicController.$inject = [];
+    MusicController.$inject = ['$http', 'Paths'];
 
-    function MusicController() {
+    function MusicController($http, Paths) {
         var vm = this;
 
         vm.soundCloudUrl = soundCloudUrl;
@@ -12,6 +12,10 @@
             return "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/" + artist.soundCloudId +
                 "&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
         }
+
+        // $http.get(Paths.videos).then(function(response) {
+        //     console.log(response);
+        // });
 
         vm.artists = [
             { name: 'P2THEGOLDMA$K', url: 'https://soundcloud.com/p2ski', soundCloudId: '10965665' },
@@ -22,7 +26,6 @@
             { name: 'DRIPPIN SO PRETTY', url: 'https://soundcloud.com/driplord6', soundCloudId: '74246418' },
             { name: 'ASH EINSTEIN', url: 'https://soundcloud.com/ashielyeinstein', soundCloudId: '87889872' },
             { name: 'BURGER', url: 'https://soundcloud.com/burger-on-the-beat', soundCloudId: '72815753' },
-            { name: 'WIFIGAWD', url: 'https://soundcloud.com/wifigawd', soundCloudId: '62752671' },
             { name: 'JT STEEZ', url: 'https://soundcloud.com/jteesteezy', soundCloudId: '11167003&' },
             { name: 'HOT BOY JODI', url: 'https://soundcloud.com/hotboijode', soundCloudId: '90532701' },
             { name: 'WA$ABI D', url: 'https://soundcloud.com/wasabidpmg', soundCloudId: '4046729' },
@@ -34,7 +37,8 @@
             { name: 'BRANTHADON', url: 'https://soundcloud.com/honeyberryjesus', soundCloudId: '48642063' },
             { name: 'KICKDOE', url: 'https://soundcloud.com/47-ruthle-click', soundCloudId: '77277754' },
             { name: 'SVDFACE D', url: 'https://soundcloud.com/svdfvced3455', soundCloudId: '9412441' },
-            { name: 'WULFTRILLA', url: 'https://soundcloud.com/wulftrilla', soundCloudId: '162970431' }
+            { name: 'WULFTRILLA', url: 'https://soundcloud.com/wulftrilla', soundCloudId: '162970431' },
+            { name: 'WIFIGAWD', url: 'https://soundcloud.com/wifigawd', soundCloudId: '62752671' }
         ];
     }
 })();
