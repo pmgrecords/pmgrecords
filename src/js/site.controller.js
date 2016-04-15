@@ -1,9 +1,9 @@
 (function() {
     angular.module('PMG Records').controller('SiteController', SiteController);
 
-    SiteController.$inject = ['$location'];
+    SiteController.$inject = ['$location', 'userService'];
 
-    function SiteController($location) {
+    function SiteController($location, userService) {
         var vm = this;
 
         vm.mainMenu = [
@@ -14,6 +14,14 @@
             { name: 'ARTWORK', url: 'artwork' },
             { name: 'CONTACT', url: 'contact' }
         ];
+        
+        vm.adminMenu = [
+            { name: 'STORE', url: 'edit-store' },
+            { name: 'EVENTS', url: 'edit-events' },
+            { name: 'MUSIC', url: 'edit-music' },
+            { name: 'VIDEOS', url: 'edit-videos' },
+            { name: 'ARTWORK', url: 'edit-artwork' }
+        ];
         vm.isActive = isActive;
 
         if ($location.path() != '/') {
@@ -23,5 +31,9 @@
         function isActive(viewLocation) {
             return $location.path().startsWith(viewLocation);
         }
+
+        userService.registerObserverCallback(function(authenticated) {
+            vm.isAdmin = authenticated;
+        });
     }
 })();

@@ -13,6 +13,7 @@ html(ng-app='PMG Records')
         script(type='text/javascript', src='bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
         script(type='text/javascript', src='js/module.js')
         script(type='text/javascript', src='js/config.js')
+        script(type='text/javascript', src='js/initialize.js')
         script(type='text/javascript', src='js/site.controller.js')
         script(type='text/javascript', src='js/landing.controller.js')
         script(type='text/javascript', src='js/artwork.controller.js')
@@ -20,8 +21,14 @@ html(ng-app='PMG Records')
         script(type='text/javascript', src='js/music.controller.js')
         script(type='text/javascript', src='js/store.controller.js')
         script(type='text/javascript', src='js/events.controller.js')
+        script(type='text/javascript', src='js/login.controller.js')
+        script(type='text/javascript', src='js/user.service.js')
+        script(type='text/javascript', src='js/artists.service.js')
+        script(type='text/javascript', src='js/videos.service.js')
+        script(type='text/javascript', src='js/store.service.js')
+        script(type='text/javascript', src='js/events.service.js')
         script(type='text/javascript', src='js/trusted.filter.js')
-        script(type='text/javascript', src='js/server.constant.js')
+        script(type='text/javascript', src='js/api.constant.js')
 
     body(ng-app='PMG Records', ng-controller='SiteController as site')
         nav.menu.navbar.navbar-inverse.navbar-fixed-top(role='navigation', ng-show='site.showNavigation')
@@ -37,6 +44,9 @@ html(ng-app='PMG Records')
                     li(ng-repeat='item in site.mainMenu', ng-class='{ "active": site.isActive("/{{ item.url }}")}')
                         a(href='/{{ item.url }}') {{ item.name }}
         .container-fluid
+            ul.admin-nav(ng-show='site.isAdmin')
+                li(ng-repeat='item in site.adminMenu', ng-class='{ "active": site.isActive("/{{ item.url }}")}')
+                    a(href='/{{ item.url }}') {{ item.name }}
             ng-view
 
 

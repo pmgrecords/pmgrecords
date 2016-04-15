@@ -13,6 +13,11 @@
             }
             return products;
         })();
+
+        // storeService.getProducts()
+        //     .then(function(products) {
+        //         vm.products = products;
+        //     });
     }
 })();
 

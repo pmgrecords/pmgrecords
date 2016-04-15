@@ -1,0 +1,27 @@
+.edit-videos(ng-controller='StoreController as store')
+    .form-horizontal
+        .record.row(ng-repeat='event in store.products')
+            .form-group
+                label.control-label.col-sm-2 Order
+                .col-sm-8
+                    input.form-control(type='text', ng-model='store.products[$index].order')
+            .form-group
+                label.control-label.col-sm-2 Type
+                .col-sm-8
+                    input.form-control(type='text', ng-model='store.products[$index].type')
+            .form-group
+                label.control-label.col-sm-2 Size
+                .col-sm-8
+                    input.form-control(type='text', ng-model='store.products[$index].size')
+            .form-group
+                label.control-label.col-sm-2 Color
+                .col-sm-8
+                    input.form-control(type='text', ng-model='store.products[$index].color')
+            .form-group
+                label.control-label.col-sm-2 Description
+                .col-sm-8
+                    input.form-control(type='text', ng-model='store.products[$index].description')
+            .form-group
+                label.control-label.col-sm-2 Image
+                .col-sm-8
+                    input.form-control(type='text', ng-model='store.products[$index].imagePath')

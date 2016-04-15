@@ -11,11 +11,77 @@ body {
   padding: 60px 30px 30px 30px;
 }
 
-.artwork-tile {
-  text-align: center;
 
-  img {
-    height: 180px;
+input[type='text'], input[type='password'], .contact textarea {
+  background-color: black;
+  color: $gray;
+}
+
+label {
+  color: $gold;
+}
+
+
+ul.admin-nav {
+  list-style: none;
+  padding: 8px;
+  text-align: center;
+  user-select: none;
+}
+
+.record {
+  border: 1px solid $gold;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px ) {
+  ul.admin-nav li {
+    display: block;
+  }
+}
+
+ul.admin-nav li {
+  display: inline;
+  margin-right: 20px;
+  padding: 10px 20px;
+}
+
+ul.nav.navbar-nav li a:hover {
+  color: $gold;
+}
+
+ul.admin-nav li a:hover {
+  color: $gold;
+}
+
+ul.admin-nav li.active {
+  background-color: $gold;
+}
+
+ul.admin-nav li.active a {
+  color: black;
+}
+
+ul.admin-nav li:last-child {
+  margin-right: 0;
+}
+
+ul.admin-nav li a {
+  color: $gray;
+  text-decoration: none;
+}
+
+.artwork {
+  .artwork-tile {
+    text-align: center;
+
+    img {
+      height: 180px;
+    }
   }
 }
 
@@ -37,7 +103,8 @@ body {
 
 .artist-tile {
   width: 320px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+  text-align: center;
 
   iframe {
     width: 300px;
@@ -45,7 +112,7 @@ body {
   }
 
   @media screen and (max-width: 768px) {
-    text-align: center;
+
     width: 100%;
 
     iframe {
@@ -85,10 +152,7 @@ body {
     border-left: 1px solid black;
   }
 
-  input, textarea {
-    background-color: black;
-    color: $gray;
-  }
+
 }
 
 .store {
@@ -96,15 +160,33 @@ body {
     border: 1px solid $gold;
     width: 120px;
     height: 180px;
-    transition: all 1s;
+    transition: all 0.3s;
     background-color: black;
+    margin: 0 auto 40px auto;
   }
 
   .product-tile:hover {
     transform: scale(1.4);
   }
 
-  .product-tile-container {
-    margin-bottom: 40px;
+  @media screen and (max-width: 480px ) {
+    .product-tile-container {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 320px ) {
+    .product-tile-container {
+      width: 100%;
+    }
+  }
+}
+
+.videos {
+  .video-tile {
+    text-align: center;
+  }
+  iframe {
+    width: 200px;
   }
 }

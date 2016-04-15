@@ -1,0 +1,12 @@
+.login(ng-controller='LoginController as login')
+    .row
+        .col-sm-2.col-sm-offset-5
+            .form-horizontal
+                .form-group
+                    label.control-label Username
+                    input.form-control(type='text', ng-model='login.username')
+                .form-group
+                    label.control-label Password
+                    input.form-control(type='password', ng-model='login.password')
+                .form-group
+                    button.btn.btn-warning(ng-click='login.login()') Sign In

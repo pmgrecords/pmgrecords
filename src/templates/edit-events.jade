@@ -1,0 +1,43 @@
+.edit-videos(ng-controller='EventsController as events')
+    .form-horizontal
+        .record.row(ng-repeat='event in events.events')
+            .form-group
+                label.control-label.col-sm-2 Name
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].name')
+            .form-group
+                label.control-label.col-sm-2 Date
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].date')
+            .form-group
+                label.control-label.col-sm-2 Time
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].time')
+            .form-group
+                label.control-label.col-sm-2 Venue
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].venueName')
+            .form-group
+                label.control-label.col-sm-2 Address
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].address')
+            .form-group
+                label.control-label.col-sm-2 City
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].city')
+            .form-group
+                label.control-label.col-sm-2 State
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].state')
+            .form-group
+                label.control-label.col-sm-2 Zip
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].zip')
+            .form-group
+                label.control-label.col-sm-2 Image
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].imagePath')
+            .form-group
+                label.control-label.col-sm-2 Ticket URL
+                .col-sm-8
+                    input.form-control(type='text', ng-model='events.events[$index].ticketUrl')

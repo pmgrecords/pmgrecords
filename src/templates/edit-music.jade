@@ -1,0 +1,21 @@
+.edit-music(ng-controller='MusicController as music')
+    .form-horizontal
+        .record.row(ng-repeat='artist in music.artists')
+            .form-group
+                label.control-label.col-sm-2 Name
+                .col-sm-3
+                    input.form-control(type='text', ng-model='music.artists[$index].name')
+                label.control-label.col-sm-2 Order
+                .col-sm-2
+                    input.form-control(type='text', ng-model='music.artists[$index].order')
+            .form-group
+                label.control-label.col-sm-2 SndCld ID
+                .col-sm-2
+                    input.form-control(type='text', ng-model='music.artists[$index].soundCloudId')
+                label.control-label.col-sm-2.col-sm-offset-1 SndCld URL
+                .col-sm-5
+                    input.form-control(type='text', ng-model='music.artists[$index].soundCloudUrl')
+        .row
+            .form-group
+                .col-sm-6.col-sm-offset-3
+                    button.btn.btn-warning(type='button', ng-click='music.save()') Save
