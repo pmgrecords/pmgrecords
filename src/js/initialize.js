@@ -22,5 +22,12 @@
             });
             return results && results[0];
         }
+
+        Array.prototype.getById = function(value) {
+            var results = this.filter(function(o) {
+                return o.id == value;
+            });
+            return results && results[0];
+        }
     }
 })();

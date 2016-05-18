@@ -5,11 +5,18 @@
 
     function EventsController(eventsService) {
         var vm = this;
-        
+
+        vm.add = add;
+
         eventsService.getEvents()
             .then(function(events) {
                 vm.events = events;
-                vm.events.unshift({ imagePath: 'images/events/3.jpg'});
+                vm.events.unshift({ imagePath: 'images/events/3.jpg' });
             });
+
+        function add() {
+            vm.events.unshift({});
+        }
+
     }
 })();

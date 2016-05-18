@@ -1,5 +1,7 @@
 .edit-music(ng-controller='MusicController as music')
     .form-horizontal
+        .row
+            button.btn.btn-warning(type='button', ng-click='music.add()') Add
         .record.row(ng-repeat='artist in music.artists')
             .form-group
                 label.control-label.col-sm-2 Name
@@ -15,7 +17,6 @@
                 label.control-label.col-sm-2.col-sm-offset-1 SndCld URL
                 .col-sm-5
                     input.form-control(type='text', ng-model='music.artists[$index].soundCloudUrl')
-        .row
             .form-group
-                .col-sm-6.col-sm-offset-3
-                    button.btn.btn-warning(type='button', ng-click='music.save()') Save
+                .col-sm-offset-2.col-sm-8
+                    button.btn.btn-danger(type='button', ng-click='music.remove(artist)') Delete

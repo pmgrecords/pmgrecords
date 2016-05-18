@@ -1,5 +1,7 @@
 .edit-videos(ng-controller='VideosController as videos')
     .form-horizontal
+        .row
+            button.btn.btn-warning(type='button', ng-click='videos.add()') Add
         .record.row(ng-repeat='video in videos.videos')
             .form-group
                 label.control-label.col-sm-2 Order
@@ -11,3 +13,6 @@
             .form-group
                 .text-center
                     iframe.youtube-player(ng-src='{{ videos.videos[$index].url | trusted }}', allowfullscreen, frameborder='0')
+            .form-group
+                .col-sm-offset-2.col-sm-8
+                    button.btn.btn-danger(type='button', ng-click='videos.remove(video)') Delete

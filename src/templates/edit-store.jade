@@ -1,5 +1,7 @@
 .edit-videos(ng-controller='StoreController as store')
     .form-horizontal
+        .row
+            button.btn.btn-warning(type='button', ng-click='store.add()') Add
         .record.row(ng-repeat='event in store.products')
             .form-group
                 label.control-label.col-sm-2 Order
@@ -25,3 +27,6 @@
                 label.control-label.col-sm-2 Image
                 .col-sm-8
                     input.form-control(type='text', ng-model='store.products[$index].imagePath')
+            .form-group
+                .col-sm-offset-2.col-sm-8
+                    button.btn.btn-danger(type='button', ng-click='store.remove(product)') Delete
